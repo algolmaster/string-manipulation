@@ -9,8 +9,14 @@ int main() {
     int count;
     cin >> count;
 
+    string temp;
     vector<string> wordList;
-    for(int i=0;i<count;i++) cin >> wordList[i];
+
+    for(int i=0;i<count;i++)
+    {
+        cin >> temp;
+        wordList.push_back(temp);
+    }
 
     int count2 = 0;
     for(int i = 0; i<count;i++){
@@ -26,11 +32,14 @@ int checker(string word){
     vector<char> checker;
     for( i = 1; i < word.length(); i++)
     {
-        if(word[i] != word[i-1]) checker.push_back(word[i-1]);
+        if(word[i] != word[i-1])
+        {
+            checker.push_back(word[i-1]);
+        }
     }
     checker.push_back(word[i-1]);
     int size1 = checker.size();
-
+    
     sort(checker.begin(),checker.end());
     checker.erase(unique(checker.begin(),checker.end()),checker.end());
     int size2 = checker.size();
