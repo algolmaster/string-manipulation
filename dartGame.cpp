@@ -1,3 +1,11 @@
+
+/**
+ * @file dartGame.cpp
+ * @data 20219/03/17
+ * @author 최서정 github.com/cchloe2311
+ * @brief 2017 카카오 신입 공채 1차 코딩 테스트 문제 #2
+ */
+
 #include <iostream>
 #include <vector>
 #include <string>

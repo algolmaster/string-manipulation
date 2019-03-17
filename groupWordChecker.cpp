@@ -1,3 +1,9 @@
+/**
+ * @file groupWordChecker.cpp
+ * @data 20219/03/16
+ * @author 최서정 github.com/cchloe2311
+ * @brief 백준 #1316, 그룹단어체커 문제
+ */
 #include <iostream>
 #include <string>
 using namespace std;
