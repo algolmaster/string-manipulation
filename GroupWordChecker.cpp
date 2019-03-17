@@ -9,18 +9,15 @@ int main() {
     int count;
     cin >> count;
 
-    string temp;
-    vector<string> wordList;
-
+    string list[count];
     for(int i=0;i<count;i++)
     {
-        cin >> temp;
-        wordList.push_back(temp);
+        cin >> list[i];
     }
 
     int count2 = 0;
     for(int i = 0; i<count;i++){
-        if(checker(wordList[i])) count2++;
+        if(checker(list[i])) count2++;
     }
 
     cout << count2;
@@ -30,16 +27,14 @@ int main() {
 int checker(string word){
     int i;
     vector<char> checker;
-    for( i = 1; i < word.length(); i++)
-    {
-        if(word[i] != word[i-1])
-        {
+    for( i = 1; i < word.length(); i++){
+        if(word[i] != word[i-1]){
             checker.push_back(word[i-1]);
         }
     }
     checker.push_back(word[i-1]);
     int size1 = checker.size();
-    
+
     sort(checker.begin(),checker.end());
     checker.erase(unique(checker.begin(),checker.end()),checker.end());
     int size2 = checker.size();
