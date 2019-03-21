@@ -31,15 +31,19 @@ int main() {
     }
     
     if(fix.empty()) {
-        cout << "-1" << endl;
+        findFix = "-1";
     }
     
     else {
-        findFix = fix[0];
-        for(int i=1; i<fix.size(); i++) {
-            if(inputString.find(fix[i], 1)!= inputString.length()-fix[i].length() && findFix.size()<fix[i].size())
+        findFix = fix.back();
+        
+        for(int i=fix.size()-1; i>=0; i--) {
+            if(inputString.find(fix[i], 1) == inputString.length()-fix[i].length()) {
+                findFix = "-1";
+            }
+            else if(inputString.find(fix[i], 1) != inputString.length()-fix[i].length() && findFix.size()<fix[i].size())
                 findFix = fix[i];
         }
-        cout << findFix <<endl;
     }
+    cout << findFix <<endl;
 }
